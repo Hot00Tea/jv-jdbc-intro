@@ -26,9 +26,7 @@ public class BookDaoImpl implements BookDao {
 
             int affectedRows = statement.executeUpdate();
             if (affectedRows < 1) {
-                throw new RuntimeException("Expected to insert at leas one row, "
-                        +
-                        "but inserted 0 rows");
+                throw new RuntimeException("Expected to affect at least one row");
             }
 
             ResultSet generatedKeys = statement.getGeneratedKeys();
@@ -38,7 +36,7 @@ public class BookDaoImpl implements BookDao {
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException("Cant add new car: " + book, e);
+            throw new RuntimeException("Cant add new book: " + book, e);
         }
         return book;
     }
@@ -99,9 +97,7 @@ public class BookDaoImpl implements BookDao {
 
             int affectedRows = statement.executeUpdate();
             if (affectedRows < 1) {
-                throw new RuntimeException("Expected to insert at leas one row, "
-                        +
-                        "but inserted 0 rows");
+                throw new RuntimeException("Expected to affect at least one row");
             }
 
         } catch (SQLException e) {
