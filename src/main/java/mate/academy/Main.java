@@ -7,7 +7,7 @@ import mate.academy.lib.Injector;
 import mate.academy.model.Book;
 
 public class Main {
-    private static final String DAO_PATH = "mate.academy.bookdao";
+    private static final String DAO_PATH = "mate.academy";
 
     public static void main(String[] args) {
         Injector injector = Injector.getInstance(DAO_PATH);
